@@ -6,6 +6,7 @@ const MongoClient = require('mongodb').MongoClient
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 
 var db
 MongoClient.connect('mongodb://ksven711:5tgbhu8@ds127429.mlab.com:27429/thoughtdump', (err, database) => {
@@ -16,7 +17,7 @@ MongoClient.connect('mongodb://ksven711:5tgbhu8@ds127429.mlab.com:27429/thoughtd
       })
 })
 
-app.use(bodyParser.urlencoded({extended: true}))
+
 
 app.get('/', (req, res) => {
   db.collection('thoughts').find().toArray((err, result) => {
