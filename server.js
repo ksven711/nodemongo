@@ -37,7 +37,7 @@ app.post('/thoughts', (req, res) => {
 
 app.put('/thoughts', (req, res) => {
   db.collection('thoughts')
-  .findOneAndUpdate({thought: '4000DP'}, {
+  .findOneAndUpdate({thought: req.body.thought}, {
     $set: {
       thought: req.body.thought,
       content: req.body.content

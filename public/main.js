@@ -5,8 +5,8 @@ update.addEventListener('click', function () {
     method: 'put',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
-      'thought': '4000DP',
-      'content': 'Thirumaalai EOD 0122-1945'
+      'thought': document.getElementById('thought').value,
+      'content': document.getElementById('content').value
     })
   })
   .then(res => {
