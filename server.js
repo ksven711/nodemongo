@@ -50,4 +50,13 @@ app.put('/thoughts', (req, res) => {
         })
 });
 
+app.delete('/thoughts', (req, res) => {
+    db.collection('thoughts').findOneAndDelete({thought: req.body.thought},
+        (err, result) => {
+            if (err) return res.send(500, err);
+            console.log(result);
+            res.send('test dump is deleted')
+        })
+});
+
 
