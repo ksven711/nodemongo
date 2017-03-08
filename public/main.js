@@ -1,12 +1,12 @@
-var update = document.getElementById('update')
+var update = document.getElementById('update');
 
 update.addEventListener('click', function () {
   fetch('thoughts', {
     method: 'put',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
-      'thought': document.getElementById('thought').value,
-      'content': document.getElementById('content').value
+      'thought': 'Vaaganam',
+      'content': 'Wipers at the back - '+Date.now()
     })
   })
   .then(res => {
@@ -15,4 +15,4 @@ update.addEventListener('click', function () {
   .then(data => {
     console.log(data)
   })
-})
+});
