@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>MY APP</title>
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
 
-        <h2>May Node and Express be with you.</h2>
+        <h2 class="flamboyant-pink">May Node and Express be with you.</h2>
 
         <ul class="thoughts-main">
             <% for(var i=0; i<thoughts.length; i++) {%>
@@ -18,10 +19,6 @@
             <% } %>
         </ul>
 
-        <div>
-            <h3>Rethink thoughts?</h3>
-            <button id="update">Second thoughts (wink!)</button>
-        </div>
 
         <div>
           <h2>Perish the thought</h2>
@@ -34,8 +31,14 @@
             <form action="/thoughts" method="POST">
                 <input id="thought" type="text" placeholder="thought" name="thought">
                 <input id="content" type="text" placeholder="content" name="content">
-                <button type="submit">Submit</button>
+
+                <br /><br /><br />
+                <button type="submit">Submit new thought</button>
             </form>
+
+            <div>
+                <button id="update">Rethink</button>
+            </div>
         </div>
 
         <script src="main.js"></script>
