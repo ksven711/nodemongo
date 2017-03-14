@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 var db;
-MongoClient.connect('mongodb://ksven711:5tgbhu8@ds127429.mlab.com:27429/thoughtdump', (err, database) => {
+MongoClient.connect('mongodb://**********:*******@**********.mlab.com:*******/*********', (err, database) => {
     if (err) return console.log(err);
     db = database;
     app.listen(3000, () => {
